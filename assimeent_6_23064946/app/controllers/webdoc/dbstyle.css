@@ -1,0 +1,28 @@
+.pannal{
+    height: 50px;
+    width: 1000px;
+    background-color: azure;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(145, 156, 156);
+}
+.pannal.top{
+    height: 30px;
+    color: black;
+    text-align: left;
+}
+.pannal.text{
+    width: 90px;
+    height: 23px;
+    display: inline-flex;
+    text-align: center;
+}
+#button{
+    height: 30px;
+    width: 100px;
+    background-color: azure;
+    border-style: solid;
+    border-width: 3px;
+    color: black;
+    border-color: black
+}

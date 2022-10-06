@@ -1,0 +1,41 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Rest api</title>
+      <link rel="stylesheet" type="text/css" href="dbstyle.css">
+      </link>
+      <script src="./jquery-3.6.0.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function(){
+            fetch('http://localhost:2000/store/coustomer'{
+               method:'GET',
+               headers:{
+                  'access-control-allow-origin':'*' 
+               }
+            })
+    // Handle success
+.then(response => response.json())  // convert to json
+    .then(json => console.log(json))    //print data to console
+    .catch(err => console.log('Request Failed', err)); // Catch errors
+         });
+      </script>
+   </head> 
+   <body>
+      <div class="pannal top">
+         <div class="pannal text">Title</div>
+         <div class="pannal text">FirstName</div>
+         <div class="pannal text">Surname</div>
+         <div class="pannal text">mobile</div>
+         <div class="pannal text">Email</div>
+         <div class="pannal text">AddressLine1</div>
+         <div class="pannal text">AddressLine2</div>
+         <div class="pannal text">Town</div>
+         <div class="pannal text">County</div>
+         <div class="pannal text">EIRCOAD</div>
+      </div>
+    
+   </body>
+</html>
+
