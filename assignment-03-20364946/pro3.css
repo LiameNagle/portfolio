@@ -1,0 +1,35 @@
+
+td,th{
+  border: 1px solid black;
+  text-align: center;
+  border-color: white;
+}
+table{
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 50px;
+}
+button{
+  border: 5px solid #eeee;
+  border-style: groove;
+  padding: 10px;
+  background-color: white;
+}
+input{
+  width: 90%;
+  border-collapse: collapse;
+  text-align: center;
+}
+tr:nth-child(n){
+  background-color: Lightgray;
+}
+tr:nth-child(2n){
+  background-color: gray;
+}
+th{
+  background-color: #444444;
+  color: white;
+}
+#res{
+  text-align: center;
+}
