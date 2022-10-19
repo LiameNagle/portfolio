@@ -71,7 +71,7 @@ class Dictionary {
     private String input[];
 
     public Dictionary() {
-        input = load("C:\\sgb-words.txt");
+        input = load(".\sgb-words.txt");
     }
 
     public int getSize() {
