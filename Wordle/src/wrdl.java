@@ -13,20 +13,20 @@ import java.util.Random;
 public class wrdl {
 
     public static void main(String[] args) {
-
+        // Dictionary class was given to us by our lecture 
         Dictionary fiveletterwords = new Dictionary();
         Random rnd = new Random();
         JFrame frame =new myFrame();
         Word guessofword = new Word(((myFrame) frame).getLable());
         int number =0;
-        NumberedActionListener Nal = new NumberedActionListener(((myFrame) frame).getButton(), ((myFrame) frame).getLable(),number);// having never worked whit action listaner before i belive there is many mistakes
+        NumberedActionListener Nal = new NumberedActionListener(((myFrame) frame).getButton(), ((myFrame) frame).getLable(),number);// unsure how action listeners work which led to errors 
         String randomword = fiveletterwords.getWord(rnd.nextInt(fiveletterwords.getSize() + 1));// gets a random 5 letter word
 
 
-        String[] flwArray = new String[fiveletterwords.getSize()];
+        String[] flwArray = new String[fiveletterwords.getSize()]; //flw = five letter word 
         for (int i = 0; i < flwArray.length; i++) {
-            flwArray[i] = fiveletterwords.getWord(i).substring(0, 5); //for some reson there is a sixth char i dont know where its comming from but substring fixed it
-        }
+            flwArray[i] = fiveletterwords.getWord(i).substring(0, 5); //there was an issue where there was 6 letters after the get word funtion was used 
+        }// fills array whit all five letter words 
 
 
         // set up for game
@@ -48,12 +48,12 @@ public class wrdl {
         }
         count = preCheck(guess,randomword,count);
         int greencount = 0;// is used to find 5 greens meaning the word is right
-        for (int j = 0; j < guess.length(); j++) {//the loop for each character in my cuess compared to the answer
+        for (int j = 0; j < guess.length(); j++) {//the loop for each character in my guess compared to the answer
             if (guess.charAt(j) == randomword.charAt(j)) {//comparing the character at j in my guess  to the random word chosen
                 pane.append(Color.GREEN, guess.charAt(j) + "");// prints the green character in GREEN  "" is used to turn the char to String for Syntax
                 greencount++;// increase green count
             } else if(randomword.indexOf(guess.charAt(j)) != -1&&count[randomword.indexOf(guess.charAt(j))]!=0){// if the character at j is in the random word
-                pane.append(Color.YELLOW, guess.charAt(j) + "");
+                pane.append(Color.YELLOW, guess.charAt(j) + "");//pane append chenes the color of the pane to specifyed color
             }else {
                 pane.append(Color.BLACK,guess.charAt(j) + "");
             }
@@ -66,7 +66,7 @@ public class wrdl {
     }
 }
 
-class Dictionary {
+class Dictionary {// made by lecture 
 
     private String input[];
 
