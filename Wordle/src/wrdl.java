@@ -66,7 +66,7 @@ public class wrdl {
     }
 }
 
-class Dictionary {// made by lecture 
+class Dictionary {// made by lecture  more classes below
 
     private String input[];
 
@@ -175,8 +175,9 @@ class Dictionary {// made by lecture
         return array;
     }
 }
-class ColorPane extends JTextPane {
-    public void append(Color c, String s) { // better implementation--uses
+// for both classes i referanced https://www.javatpoint.com/java-awt-panel
+class ColorPane extends JTextPane { // OO programing hasnt been explaied past methods which is why code below is messy
+    public void append(Color c, String s) { /
         // StyleContext
         StyleContext sc = StyleContext.getDefaultStyleContext();
         AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY,
@@ -277,7 +278,7 @@ class NumberedActionListener implements ActionListener {
 
             } while (!valid); //ends validation
             valid=false;
-            checkWord(guess,"sasss",lab);
+            checkWord(guess,rndword,lab);
             guessesLeft--;
         } while (guessesLeft != 0);
         Color c = new Color(0xECC137);
