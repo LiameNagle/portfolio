@@ -1,0 +1,231 @@
+
+<html>
+<head>
+  <header>
+  </header>
+  <!--copyed fron inlinesvg-->
+<!--
+*
+* disclamerthe  follow funtion at 151 and 135 (most lightly where the issue is)
+* dose not like to work outside in crome browser for reasons ``\('u')/``
+* it dose work in atom preview tho
+*
+-->
+
+  <style media="screen">
+  }
+  .mySVGBox {
+    height: 500px;
+    width: 600px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .uibox{
+      height: 100px;
+      width: 600px;
+      border: 1px solid black;
+      margin: auto;
+      margin-top: 10px;
+      padding: 10px;
+  }
+  .button {
+    border: 1px solid black;
+    color: gray;
+    padding: 13px 39px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  svg,
+  object {
+    border: 1px solid grey;
+    display: block;
+    margin: auto;
+  }
+  </style>
+
+
+</head>
+<body>
+  <p id ="check"></p>
+  <!--buttons-->
+  <div class="uibox">
+    <div class="button " onclick="follow()">follow </div>
+    <div class="button" onclick="raise()"> eyebrow</div>
+    <div class="button" onclick="smile()"> smile</div>
+    <div class="button" onclick="color()"> color change</div>
+    <div class="button" onclick="eat()"> eat</div>
+    <div class="button" onclick="dance()"> dance</div>
+  </div>
+  <!--getcords is for eye movements-->
+  <div class="mySVGBox" onmousemove="getcords(event)" >
+    <svg id="mySVGInline" width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+<!-- id vomit is part of eeat -->
+      <ellipse id="GhostBody" cx="300" cy="370" rx="200" ry = "350"stroke="black" stroke-width="2" fill="white" >
+        <!-- is the color funtion -->
+        <animate attributeName ="fill"  dur="5s" end ="indefinite" keyTimes ="0;0.1;0.2;0.4;0.6;0.8;0.9;1" values ="tomato;purple;coral;indigo;seagreen;yellow;brown;tomato;" repeatCount="indefinite" begin ="indefinite" id ="crchng" />
+        <!-- in eat -->
+        <animate attributeName = "rx" from= "300" to="200" dur="1s" begin = "indefinite" id="vomit"/>
+        <!-- for dance -->
+        <animate attributeName = "rx" values="200;250;200" dur="0.5s" begin = "indefinite" repeatCount="indefinite"id="dance1"/>
+        <animate attributeName = "ry" values="350;300;350" dur="0.5s" begin = "indefinite"repeatCount="indefinite" id="dance2"/>
+      </ellipse>
+
+      <ellipse id = "eye1" cx = "225" cy = "150" rx = 30 ry="50">
+        <animate attributeName = "cy" values="150;200;150" dur="0.5s" begin = "indefinite" repeatCount="indefinite"id="dance3"/>
+       </ellipse>
+
+      <ellipse id = "eye2" cx = "375" cy = "150" rx = 30 ry="50">
+        <animate attributeName = "cy" values="150;200;150" dur="0.5s" begin = "indefinite" repeatCount="indefinite"id="dance4"/>
+       </ellipse>
+
+
+      <ellipse id = "puple1"  cx = "225" cy = "150" rx = 5 ry =8 fill = white>
+          <animate class "x1" attributeName = "cx" from="225" to="215" dur="0.1s" begin = "indefinite" fill="freeze" id = "look-left1"/>
+          <animate class "x1" attributeName = "cx" from="225" to="235" dur="0.1s" begin = "indefinite" fill="freeze" id = "look-right1"/>
+          <animate attributeName = "cy" values="150;200;150" dur="0.5s" begin = "indefinite" repeatCount="indefinite"id="dance5"/>
+      </ellipse>
+      <ellipse id = "puple2"  cx = "375" cy = "150" rx = 5 ry =8 fill = white>
+        <animate class "x1" attributeName = "cx" from="375" to="365" dur="0.1s" begin = "indefinite" fill="freeze" id = "look-left"/>
+        <animate class "x1" attributeName = "cx" from="375" to="385" dur="0.1s" begin = "indefinite" fill="freeze" id = "look-right"/>
+          <animate attributeName = "cy" values="150;200;150" dur="0.5s" begin = "indefinite" repeatCount="indefinite"id="dance6"/>
+       </ellipse>
+
+
+      <line id = "brow1" x1= "205" y1="70" x2="290" y2 = "130" stroke= "black" stroke-width="3">
+        <animate class "x" attributeName = "y1" values = "70;50;70;50;70" dur="2s" begin = "indefinite" id = "raise-eyes1"/>
+        <animate class "x1" attributeName = "y2" values = "130;110;130;110;130" dur="2s" begin = "indefinite" id = "raise-eyes2"/>
+          <animate attributeName = "y1" values="70;120;70" dur="0.5s" begin = "indefinite" repeatCount="indefinite"id="dance7"/>
+            <animate attributeName = "y2" values="130;170;130" dur="0.5s" begin = "indefinite" repeatCount="indefinite"id="dance8"/>
+      </line>
+
+      <line id = "brow2" x2= "395" y2="70" x1="310" y1 = "130" stroke= "black" stroke-width="3">
+        <animate class "x" attributeName = "y2" values = "70;50;70;50;70" dur="2s" begin = "indefinite" id = "raise-eyes3"/>
+        <animate class "x1" attributeName = "y1" values = "130;110;130;110;130" dur="2s" begin = "indefinite" id = "raise-eyes4"/>
+        <animate attributeName = "y2" values="70;120;70" dur="0.5s" begin = "indefinite" repeatCount="indefinite"id="dance9"/>
+        <animate attributeName = "y1" values="130;170;130" dur="0.5s" begin = "indefinite" repeatCount="indefinite"id="dance10"/>
+        </line>
+
+<!-- mouth is for the eat funtion and smile is for the smile-->
+        <path id= "mouth" fill = "none" stroke ="none" stroke-width=5.0 d= "m 270 320 c -3 40 66 40 60 0" >
+          <animate attributeName ="fill" from="none" to="black" dur="1s" begin="indefinite"id = "open"/>
+        </path>
+
+        <path id= "smile" fill = "none" stroke ="#000" stroke-width=5.0 d= "m 270 320 c -3 40 66 40 60 0" stroke-dasharray="150"stroke-dashoffset="150">
+          <animate attributeName ="stroke-dashoffset" from="150" to ="0" dur="2s" begin = "indefinite" id = "smile0"/>
+          <animate attributeName ="stroke-dashoffset" from="150" to ="0" dur="0.5s" fill ="black" begin = "indefinite" id = "smile1"/>
+
+        </path>
+
+
+
+    </svg>
+  </div>
+<script type="text/javascript">
+//no excuse for cx beeing outside of the funtion
+// bool is used to turn onn and off funtions
+//just like its cousins bool1 and bl
+    var cx = 0;
+    var bool = 0;
+    function getcords(event){
+      if(bool ==1){
+      cx = event.clientX;
+      if(cx<300){
+        document.getElementById('look-left').beginElement();
+        document.getElementById('look-left1').beginElement();
+
+      }else if(cx>300){
+        document.getElementById('look-right').beginElement();
+        document.getElementById('look-right1').beginElement();
+      }
+    }
+  }
+  //follow and get cords funtion wor together
+  // followonly works when the mousse stops
+  // best way to do this would be to somehow relate cords whit dasharray % and then it could follow it perfectsly in a circle whitin
+  	function follow(){
+      if(bool == 0){
+        bool = 1;
+      }else{
+        bool =0;
+      }
+    }
+  var bool1=0;
+  //sets off the event for colorchage
+  //bool1 once again used as an on off switch
+function color() {
+
+  if(bool1 == 0){
+  document.getElementById('crchng').beginElement();
+  bool1 = 1;
+}else{
+  document.getElementById('crchng').endElement();
+  bool1 = 0;
+}
+}
+
+//dose eyebrow movement
+  function raise(){
+    document.getElementById('raise-eyes1').beginElement();
+    document.getElementById('raise-eyes2').beginElement();
+    document.getElementById('raise-eyes3').beginElement();
+    document.getElementById('raise-eyes4').beginElement();
+  }
+  //smile funtion
+  function smile(){
+    document.getElementById('smile0').beginElement();
+
+  }
+  var rx = 200;
+  // rx is used to increase the rx style in ghostbody because saying GhostBody.style.rx = GhostBody.style.rx+10 breaks
+  function eat(){
+    if(rx == 290){
+      rx = 200;
+      document.getElementById('vomit').beginElement();
+      GhostBody.style.rx = rx ;
+      document.getElementById('open').beginElement();
+    }else{
+    rx += 10;
+    GhostBody.style.rx = rx ;
+    document.getElementById('open').beginElement();
+    }
+  }
+  var bl = 0;
+  function dance (){
+    if(bl == 0){
+    document.getElementById('dance1').beginElement();
+    document.getElementById('dance2').beginElement();
+    document.getElementById('dance3').beginElement();
+    document.getElementById('dance4').beginElement();
+    document.getElementById('dance5').beginElement();
+    document.getElementById('dance6').beginElement();
+    document.getElementById('dance7').beginElement();
+    document.getElementById('dance8').beginElement();
+    document.getElementById('dance9').beginElement();
+    document.getElementById('dance10').beginElement();
+    bl =1;
+  }else{
+    document.getElementById('dance1').endElement();
+    document.getElementById('dance2').endElement();
+    document.getElementById('dance3').endElement();
+    document.getElementById('dance4').endElement();
+    document.getElementById('dance5').endElement();
+    document.getElementById('dance6').endElement();
+    document.getElementById('dance7').endElement();
+    document.getElementById('dance8').endElement();
+    document.getElementById('dance9').endElement();
+    document.getElementById('dance10').endElement();
+    bl=0;
+  }
+  }
+
+</script>
+
+</body>
+    </html>
