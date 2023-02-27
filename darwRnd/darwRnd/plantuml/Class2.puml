@@ -1,0 +1,8 @@
+@startuml
+class ConMem {
+    + ConMem(svg:string, data:string)
+    + getData() : string
+    + getSvg() : string
+}
+mementoi <|-- ConMem
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class originator {
+    + originator()
+    + makeShape1(shapename:String, num1:int, num2:int, num3:int, num4:int, num5:int, path:string) : void
+    + makeMem() : mementoi
+    + Restore(memento:mementoi) : void
+}
+@enduml

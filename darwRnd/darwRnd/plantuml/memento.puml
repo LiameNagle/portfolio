@@ -1,0 +1,6 @@
+@startuml
+interface mementoi {
+    getSvg() : string
+    getData() : string
+}
+@enduml

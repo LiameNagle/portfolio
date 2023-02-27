@@ -1,0 +1,5 @@
+@startuml
+class Proagram {
+    {static} Main(args:string[]) : void
+}
+@enduml

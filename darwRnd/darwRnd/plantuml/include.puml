@@ -1,0 +1,10 @@
+@startuml
+!include .\\Class2.puml
+!include .\\draw.puml
+!include .\\memento.puml
+!include .\\originator.puml
+!include .\\Program.puml
+!include .\\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\obj\Debug\net6.0\darwRnd.AssemblyInfo.puml
+!include .\\obj\Debug\net6.0\darwRnd.GlobalUsings.g.puml
+@enduml

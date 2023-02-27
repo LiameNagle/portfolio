@@ -1,0 +1,9 @@
+@startuml
+class draw {
+    + draw(ori:originator)
+    + newShape() : void
+    + undo() : void
+    + clear() : void
+    + redo() : void
+}
+@enduml
